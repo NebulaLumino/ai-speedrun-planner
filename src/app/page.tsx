@@ -37,7 +37,7 @@ export default function Home() {
       const res = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formData, systemPrompt: '' + sp_esc + '' }),
+        body: JSON.stringify({ formData, systemPrompt: "Generate a comprehensive speedrun plan including: route breakdown by game section, time estimate per section, key time-save tricks per section, practice priority ranking (what to drill first), setup and tool-assisted study recommendations, community resources and Discord servers, individual milestone targets leading to goal time, and mental game and focus techniques." }),
       });
       const data = await res.json();
       if (data.error) { setError(data.error); return; }
@@ -54,7 +54,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto p-6">
         <header className="mb-8">
           <h1 className={"text-3xl font-bold bg-gradient-to-r from-neutral-500 to-stone-600 bg-clip-text text-transparent"}>
-            {'' + title_esc + ''}
+            "AI Speedrun Route Optimizer & Game Mastery Planner"
           </h1>
           <p className="text-zinc-400 mt-2 text-sm">Fill in the options below and generate your game content instantly.</p>
         </header>
